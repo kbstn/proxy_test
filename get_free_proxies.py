@@ -35,11 +35,11 @@ proxylist= df.connection.tolist()
 
 # ProxyChecker will return information as dictionary, we create a empty one to fill it with results
 working_proxies ={}
-for proxy in proxylist:
+for count,proxy in enumerate(proxylist):
     
       #Get a proxy from the pool
       
-      print("Request "+proxy)
+      print("Request "+count+'/'+len(proxylist))
 
     
       checker = ProxyChecker()
