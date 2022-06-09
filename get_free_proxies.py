@@ -39,7 +39,7 @@ for count,proxy in enumerate(proxylist):
     
       #Get a proxy from the pool
       
-      print("Request "+str(count)+'/'+str(len(proxylist)))
+      print("Request "+str(count)+'/'+str(len(proxylist))+' --> checking '+ proxy)
 
     
       checker = ProxyChecker()
@@ -47,10 +47,10 @@ for count,proxy in enumerate(proxylist):
       check=checker.check_proxy(proxy)
       
       if check == False:
-          print('not working')
+          print(proxy+' not working')
       else:
           working_proxies[proxy] = check
-          print('working proxy, details: '+str(check))
+          print(' --> working proxy, details: '+str(check))
           
 # create a dataframe with the results
 result= pd.DataFrame(working_proxies).T.reset_index()
