@@ -53,9 +53,8 @@ for proxy in proxylist:
           print('working proxy, details: '+str(check))
           
 # create a dataframe with the results
-result= pd.DataFrame(working_proxies)
-
-# normalize the dict in the df column so that each key will get his own column
-result = pd.json_normalize(df['Pollutant Levels'])
+result= pd.DataFrame(working_proxies).T.reset_index()
 
 # save working proxies as csv
+result.to_csv('working_proxies.csv')
+
