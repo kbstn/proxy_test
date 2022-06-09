@@ -39,7 +39,7 @@ for count,proxy in enumerate(proxylist):
     
       #Get a proxy from the pool
       
-      print("Request "+count+'/'+len(proxylist))
+      print("Request "+str(count)+'/'+str(len(proxylist)))
 
     
       checker = ProxyChecker()
