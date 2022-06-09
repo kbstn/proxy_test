@@ -28,10 +28,12 @@ df['connection']=df['IP Address'].map(str)+':'+df.Port.map(str)
 df['connection_all']=df['http'].map(str)+'://'+df['IP Address'].map(str)+':'+df.Port.map(str)
 
 
-proxy = pd.Series(df.connection.values,index=df.http)
+# proxy = pd.Series(df.connection.values,index=df.http)
+
+# create a list containing all ip adresses and ports of the proxies
 proxylist= df.connection.tolist()
 
-
+# ProxyChecker will return information as dictionary, we create a empty one to fill it with results
 working_proxies ={}
 for proxy in proxylist:
     
@@ -50,5 +52,10 @@ for proxy in proxylist:
           working_proxies[proxy] = check
           print('working proxy, details: '+str(check))
           
+# create a dataframe with the results
 result= pd.DataFrame(working_proxies)
+
+# normalize the dict in the df column so that each key will get his own column
 result = pd.json_normalize(df['Pollutant Levels'])
+
+# save working proxies as csv
