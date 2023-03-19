@@ -11,7 +11,7 @@
   ```
 ## How to use the script  
     
-  To use the script, simply run it in a Python environment. The script will automatically scrape the website "[https://free-proxy-list.net/](https://free-proxy-list.net/)" to get a list of free proxies. Then it will test each proxy in the list using the ProxyChecker module.  
+  To use the script, simply run it in a Python environment. The script will automatically scrape a website to get a list of free proxies. Then it will test each proxy in the list using the ProxyChecker module.  
     
   The working proxies will be saved in a CSV file named "working_proxies.csv". This file will contain two columns: "connection" and "details". The "connection" column lists the IP address and port number of each working proxy, while the "details" column lists information about each proxy, such as the country where the proxy is located, the anonymity level of the proxy, and whether the proxy supports HTTPS.  
     
